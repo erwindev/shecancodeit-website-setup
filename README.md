@@ -57,12 +57,25 @@ $ python app.py
 
 Open http://localhost:5000 in your browser, and you sould see the "Hello World!" response.
 
+#### Check in code to Github
+* Go to http://gitignore.io and search for Flask.  Save the content in `.gitignore` file.
+* Add new repo in Github
+
+```
+$ git init
+$ git add .
+$ git commit -m "first commit"
+$ git remote add origin https://github.com/erwindev/shecancodeit-website-setup.git
+$ git push -u origin master
+
+```
+
+
 ## Useful Resources
 
 #### SheCanCodeIT Slack Channel
 * Join http://shecancodeit.slack.com
 * Go to #projectwork channel
-
 
 
 
