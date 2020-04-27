@@ -10,6 +10,7 @@ class User(db.Model):
     city = db.Column(db.String(50))
     state = db.Column(db.String(50))
     zipcode = db.Column(db.String(50))
+    temp = db.Column(db.String(50))
     create_date = db.Column(db.DateTime, default=datetime.utcnow)
 
     def __repr__(self):
