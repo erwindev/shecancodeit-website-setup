@@ -24,10 +24,10 @@ def register():
         user.city = form.city.data
         user.state = form.state.data
         user.zipcode = form.zipcode.data
-        UserDao.save_user(user)
-        flash('Congratulations, you are now a registered user!')
+        tempuser = UserDao.save_user(user)
+        flash('Congratulations, {} is now a registered user!'.format(tempuser.firstname))
         return redirect(url_for('sccit_app.thankyou'))
-    return render_template('register.html', title='Register', form=form)
+    return render_template('register.html', title='Register User', form=form)
 
 
 @sccit_app.route('/thankyou')
