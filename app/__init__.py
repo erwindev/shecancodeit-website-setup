@@ -19,7 +19,7 @@ def create_app(config_name):
 
     bootstrap.init_app(app)
 
-    app.config.from_object(config_by_name['development'])
+    app.config.from_object(config_by_name[config_name])
 
     from app.model.usermodel import User
 
