@@ -35,6 +35,7 @@ $ pip install -r requirements.txt
 
 #### Run the Flask Application
 ```
+$ flask db upgrade
 $ flask run
 ```
 
