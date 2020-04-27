@@ -1,0 +1,2 @@
+FLASK_APP=sccit_app.py
+FLASK_ENV=development
