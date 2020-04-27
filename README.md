@@ -28,50 +28,24 @@ $ virtualenv venv
 $ . venv/bin/activate
 ```
 
-#### Install Flask
+#### Install the application
 ```
-$ pip install flask
-$ pip freeze > requirements.txt
-```
-
-#### Create a simple Flask Application
-Save the following Python code in a file called app.py.
-
-```Python
-from flask import Flask
-app = Flask(__name__)
-
-@app.route("/")
-def hello():
-  return "Hello World!"
-
-if __name__ == "__main__":
-  app.run()
-
+$ pip install -r requirements.txt
 ```
 
 #### Run the Flask Application
 ```
-$ python app.py
+$ flask run
 ```
 
-Open http://localhost:5000 in your browser, and you sould see the "Hello World!" response.
+Open http://localhost:5000
 
-#### Check in code to Github
-* Go to http://gitignore.io and search for Flask.  Save the content in `.gitignore` file.
-* Add new repo in Github
-
+#### Changes to any model object (i.e. UserModel)
+If you make any change to any model object, you will need to apply those changes to the database. 
 ```
-$ git init
-$ git add .
-$ git commit -m "first commit"
-$ git remote add origin https://github.com/erwindev/shecancodeit-website-setup.git
-$ git push -u origin master
-
+$ flask db migrate -m 'comment here'
+$ flask db upgrade
 ```
-
-
-## Useful Resources
 
 #### SheCanCodeIT Slack Channel
 * Join http://shecancodeit.slack.com
