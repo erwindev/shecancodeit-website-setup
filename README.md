@@ -22,11 +22,18 @@ This is a sample application that will be used to teach SheCanCodeIT members how
 $ pip install virtualenv
 ```
 
-#### Setup the development environment
+#### Setup the development environment(Linux & MacOS)
 ```
 $ virtualenv venv
 $ . venv/bin/activate
 ```
+
+#### Setup the development environment(Windows)
+```
+$ virtualenv venv
+$ .\venv\Scripts\activate
+```
+
 
 #### Install the application
 ```
