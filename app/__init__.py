@@ -22,6 +22,7 @@ def create_app(config_name):
     app.config.from_object(config_by_name[config_name])
 
     from app.model.usermodel import User
+    from app.model.hobbymodel import Hobby
 
     db.init_app(app)
     migrate.init_app(app, db)

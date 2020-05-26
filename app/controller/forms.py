@@ -8,14 +8,19 @@ class RegistrationForm(FlaskForm):
     firstname = StringField('First Name', validators=[DataRequired()])
     lastname = StringField('Last Name', validators=[DataRequired()])
     email = StringField('Email', validators=[DataRequired()])
-    street = StringField('Street', validators=[DataRequired()])
-    city = StringField('City', validators=[DataRequired()])
-    state = StringField('State', validators=[DataRequired()])     
-    zipcode = StringField('Zipcode', validators=[DataRequired()])     
+    street = StringField('Email', validators=[DataRequired()])
+    city = StringField('Email', validators=[DataRequired()])
+    state = StringField('Email', validators=[DataRequired()])     
+    zipcode = StringField('Email', validators=[DataRequired()])     
     
-    submit = SubmitField('Save')
+    submit = SubmitField('Register')
 
     # def validate_email(self, email):
     #     user = UserDao.get_by_email(email.data)
     #     if user is not None:
     #         raise ValidationError('Please use a different email address.')
+
+class HobbyForm(FlaskForm):
+    name = StringField('Hobby Name', validators=[DataRequired()])
+
+    submit = SubmitField('Save Hobby')
