@@ -28,6 +28,9 @@ CREATE TABLE "hobby" (
 );
 ```
 
+## Entity Relationship (ER) Diagram
+![ER Diagram](dbtutorial.png)
+
 ## CRUD
 Create, Read, Update, Delete
 
