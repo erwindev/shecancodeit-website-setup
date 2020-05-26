@@ -43,5 +43,9 @@ class UserDao:
         return User.query.all()
 
     @staticmethod
+    def get_by_id(id):
+        return User.query.filter_by(id=id).first()       
+
+    @staticmethod
     def get_by_email(email_data):
-        return User.query.filter_by(email=email_data).first()       
+        return User.query.filter_by(email=email_data).first()               

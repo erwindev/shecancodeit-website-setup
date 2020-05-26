@@ -19,3 +19,8 @@ class RegistrationForm(FlaskForm):
     #     user = UserDao.get_by_email(email.data)
     #     if user is not None:
     #         raise ValidationError('Please use a different email address.')
+
+class HobbyForm(FlaskForm):
+    name = StringField('Hobby Name', validators=[DataRequired()])
+
+    submit = SubmitField('Save Hobby')

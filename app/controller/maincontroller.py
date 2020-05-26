@@ -1,8 +1,10 @@
-from flask import Blueprint, render_template, redirect, request, url_for, flash
+from flask import Blueprint, render_template, redirect, request, url_for, flash, session
 from datetime import datetime
 from app.dao.userdao import UserDao
+from app.dao.hobbydao import HobbyDao
 from app.model.usermodel import User
-from app.controller.forms import RegistrationForm
+from app.model.hobbymodel import Hobby
+from app.controller.forms import RegistrationForm, HobbyForm
 
 sccit_app = Blueprint('sccit_app', __name__)
 
@@ -24,10 +26,30 @@ def register():
         user.city = form.city.data
         user.state = form.state.data
         user.zipcode = form.zipcode.data
-        UserDao.save_user(user)
+        user = UserDao.save_user(user)
         flash('Congratulations, you are now a registered user!')
+        session['user_id'] = user.id
         return redirect(url_for('sccit_app.thankyou'))
     return render_template('register.html', title='Register', form=form)
+
+@sccit_app.route('/hobby', methods=['GET', 'POST'])
+def hobby():
+    form = HobbyForm()
+    if form.validate_on_submit():
+        hobby = Hobby()
+        hobby.name = form.name.data
+        hobby.user_id = session['user_id']
+        HobbyDao.save_hobby(hobby)
+        return redirect(url_for('sccit_app.userdetail', userid=session['user_id']))
+    return render_template('hobby.html', title='Hobby', form=form)    
+
+
+@sccit_app.route('/userdetail/<int:userid>', methods=['GET', 'POST'])
+def userdetail(userid):
+    user = UserDao.get_by_id(userid)
+    session['user_id'] = user.id
+    hobbies = HobbyDao.get_hobby_by_userid(user.id)
+    return render_template('user_detail.html', title='User Detail', currentuser=user, hobbies=hobbies)        
 
 
 @sccit_app.route('/thankyou')

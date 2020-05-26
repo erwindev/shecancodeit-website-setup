@@ -1,0 +1,54 @@
+{% extends "layout/layout.html" %}
+
+{% block app_content  %}
+
+<h1>Registered Users!</h1>
+
+
+User Detail:
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Street</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zipcode</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ currentuser.firstname }}</td>
+      <td>{{ currentuser.lastname }}</td>
+      <td>{{ currentuser.email }}</td>
+      <td>{{ currentuser.street }}</td>
+      <td>{{ currentuser.city }}</td>
+      <td>{{ currentuser.state }}</td>
+      <td>{{ currentuser.zipcode }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  <a href="{{ url_for('sccit_app.hobby')}}"><button type="button" class="btn btn-primary">Add Hobby</button></a> 
+</p>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for hobby in hobbies %}
+    <tr>
+      <td>{{ hobby.name }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+</div>
+
+{% endblock %}
