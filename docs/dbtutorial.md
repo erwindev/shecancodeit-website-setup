@@ -7,7 +7,7 @@ For this tutiorial we will use SQLite and DB Browser for SQLite (https://sqliteb
 
 ```
 CREATE TABLE "user" (
-	"id"	INTEGER INTEGER PRIMARY KEY AUTOINCREMENT,
+	"id"	INTEGER PRIMARY KEY AUTOINCREMENT,
 	"firstname"	VARCHAR(80),
 	"lastname"	VARCHAR(80),
 	"email"	VARCHAR(120),
