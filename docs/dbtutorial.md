@@ -23,7 +23,6 @@ CREATE TABLE "hobby" (
 	"name"	VARCHAR(200),
 	"user_id"	INTEGER,
 	"create_date"	DATETIME,
-	PRIMARY KEY("id"),
 	FOREIGN KEY("user_id") REFERENCES "user"("id")
 );
 ```
