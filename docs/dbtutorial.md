@@ -35,9 +35,11 @@ Create, Read, Update, Delete
 
 ## Create
 ```
-insert into user (firstname, lastname, email, street, city, state, zip code, create_date) values (“Erwin”, “Alberto”, “ealberto@me.com”, “123 main st”, “Jacksonville”, “Florida”, “32256”, “2020-05-26”)
+insert into user (firstname, lastname, email, street, city, state, zip code, create_date) values (“Erwin”, “Alberto”, “ealberto@me.com”, “123 main st”, “Jacksonville”, “Florida”, “32256”, “2020-05-26”);
 
-insert into hobby (name, user_id, create_date) values (“Programming”, “1”, “2020-05-06”)
+insert into hobby (name, user_id, create_date) values (“Programming”, “1”, “2020-05-06”);
+
+commit;
 ```
 
 ## Read
